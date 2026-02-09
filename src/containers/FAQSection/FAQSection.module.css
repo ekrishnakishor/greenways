@@ -1,0 +1,43 @@
+.section {
+  padding: 80px 20px;
+  background-color: var(--white);
+}
+
+.container {
+  max-width: 1000px; /* FAQs usually look better slightly narrower than full width */
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #00DCCD; /* Cyan Color */
+  color: var(--white);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.headline {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .headline {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,95 @@
+.card {
+  width: 500px; /* Fixed width for desktop */
+  height: 280px;
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden; /* Keeps image inside corners */
+  display: flex;
+  flex-shrink: 0; /* Prevents squishing in slider */
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.imageWrapper {
+  width: 40%;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  width: 60%;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stars {
+  display: inline-flex;       /* Makes the box wrap tightly around stars */
+  align-items: center;
+  gap: 4px;
+  background-color: #00DCCD;  /* The Teal Background */
+  padding: 8px 16px;          /* Space inside the badge */
+  border-radius: 50px;        /* Fully rounded pill shape */
+  margin-bottom: 24px;
+  width: fit-content;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  
+  /* This filter forces your star.png to become WHITE */
+  /* Remove this line if your star image is already white */
+  filter: brightness(0) invert(1);
+}
+
+.review {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.location {
+  font-size: 13px;
+  color: #888;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .card {
+    width: 320px; /* Narrower for mobile */
+    flex-direction: column; /* Stack vertically */
+    height: auto;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    height: 200px;
+  }
+
+  .content {
+    width: 100%;
+    padding: 24px;
+  }
+}

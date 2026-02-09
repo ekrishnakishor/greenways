@@ -1,0 +1,68 @@
+.sectionPadding {
+  padding: 20px; /* Space around the card */
+  display: flex;
+  justify-content: center;
+}
+
+.heroCard {
+  width: 100%;
+  max-width: var(--max-width);
+  height: 500px; /* Fixed height for the banner look */
+  border-radius: 30px; /* The rounded corners */
+  overflow: hidden;
+  
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  
+  display: flex;
+  align-items: center; /* Vertically center content */
+  padding-left: 60px; /* Push content from left */
+}
+
+.content {
+  max-width: 500px;
+  z-index: 2;
+}
+
+.headline {
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #00C2A0; /* The Teal Color from your design */
+  margin-bottom: 24px;
+}
+
+.subhead {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1A1A1A; /* Dark text */
+  margin-bottom: 32px;
+  max-width: 400px;
+}
+
+.ctaWrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .heroCard {
+    height: 400px;
+    padding-left: 30px;
+    background-position: 70% center; /* Shift image so boat is visible */
+  }
+  
+  .headline {
+    font-size: 36px;
+  }
+  
+  .subhead {
+    font-size: 14px;
+    color: #000; /* Ensure readability */
+    background: rgba(255,255,255,0.7); /* Optional: slight backing if text hits busy image */
+    padding: 5px;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,23 @@
+.btn {
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Primary Green Button */
+.primary {
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+
+.primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* We will add more variants later as we need them */

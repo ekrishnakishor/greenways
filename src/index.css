@@ -1,0 +1,34 @@
+:root {
+  /* Colors from your Design */
+  --primary-green: #00C2A0; /* Bright Teal/Green */
+  --text-dark: #1A1A1A;     /* Black/Dark Grey */
+  --text-grey: #666666;     /* Light Grey */
+  --white: #ffffff;
+  
+  /* Layout */
+  --max-width: 1920px;
+  --nav-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Ensure you have a font loaded in index.html if needed */
+  background-color: var(--white);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

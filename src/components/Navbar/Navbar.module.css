@@ -1,0 +1,71 @@
+.navbar {
+  width: 100%;
+  background-color: var(--white); /* White background */
+  padding: 20px 0;
+  /* Optional: sticky header if you want it */
+  position: relative; 
+  z-index: 100;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoImage {
+  height: 50px; 
+  width: auto;
+}
+
+.links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.links a {
+  color: var(--text-dark); /* Black text */
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: var(--primary-green);
+}
+
+.desktopAction {
+  display: block;
+}
+
+.mobileAction, .hamburger {
+  display: none;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-dark); /* Dark bars for white bg */
+  border-radius: 2px;
+}
+
+/* Mobile styles remain mostly the same, just ensure text is visible */
+@media (max-width: 960px) {
+  .desktopAction { display: none; }
+  .hamburger { display: flex; flex-direction: column; gap: 5px; }
+  
+  .links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--white); /* White mobile menu */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 30px 0;
+  }
+}

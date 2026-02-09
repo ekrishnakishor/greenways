@@ -1,0 +1,79 @@
+.section {
+  padding: 80px 0;
+  background-color: var(--white);
+  /* Remove width: 100% and overflow: hidden from here */
+  display: flex;
+  justify-content: center;       /* Hide the horizontal scrollbar for the page */
+}
+
+.container {
+  max-width: var(--max-width); 
+  width: 100%;
+  margin: 0 auto;
+  
+  /* 2. Standard padding so it aligns with the text above */
+  padding: 0 20px; 
+  
+  display: flex;
+  gap: 24px;
+  
+  /* 3. Allow scrolling, but start from the aligned left edge */
+  overflow-x: auto; 
+  scroll-behavior: smooth;
+  
+  /* Hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  /* Ensure padding doesn't get eaten by overflow */
+  box-sizing: border-box;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  /* Keep your size settings */
+  width: 300px;
+  height: 400px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* The Stagger Logic stays the same */
+.card:nth-child(even) {
+  margin-top: 60px; 
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Mobile: Still full width but smaller padding */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 20px; /* Smaller side padding on mobile */
+    gap: 16px;
+  }
+
+  .card {
+    width: 220px;
+    height: 300px;
+  }
+  
+  .card:nth-child(even) {
+    margin-top: 40px; 
+  }
+}

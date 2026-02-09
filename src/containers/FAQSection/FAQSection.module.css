@@ -1,10 +1,10 @@
 .section {
-  padding: 80px 20px;
+  padding: 80px 80px;
   background-color: var(--white);
 }
 
 .container {
-  max-width: 1000px; /* FAQs usually look better slightly narrower than full width */
+  /* max-width: 1000px;  */
   margin: 0 auto;
 }
 
@@ -17,10 +17,12 @@
   display: inline-block;
   background-color: #00DCCD; /* Cyan Color */
   color: var(--white);
-  padding: 6px 16px;
+  padding: 18px 24px;
+  width: 10%;
+  text-align: center;
   border-radius: 50px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 16px;
   text-transform: uppercase;
 }

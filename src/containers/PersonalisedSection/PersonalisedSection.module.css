@@ -10,7 +10,7 @@
 
 .bgCard {
   width: 100%;
-  min-height: 650px;
+  min-height: 750px;
   border-radius: 32px; /* Large rounded corners for the image */
   background-size: cover;
   background-position: center;
@@ -26,7 +26,7 @@
   border-radius: 16px;
   width: 100%;
   max-width: 480px;
-  border: 2px solid #00C2A0; /* The Cyan/Teal border seen in design */
+  /* border: 2px solid #00C2A0; */
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   position: relative;
   z-index: 2;

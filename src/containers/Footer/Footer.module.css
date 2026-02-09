@@ -44,7 +44,7 @@
 
 .arrowCircle {
   background-color: var(--white);
-  color: #00DCCD;
+  color: #000000;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -96,7 +96,7 @@
 }
 
 .logoText {
-  font-size: 24px;
+  font-size: 40px;
   font-weight: 800;
   color: #006D5B; /* Darker Teal for Logo text */
   margin: 0;
@@ -104,7 +104,7 @@
 }
 
 .logoSub {
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 600;
   color: #006D5B;
   letter-spacing: 1px;

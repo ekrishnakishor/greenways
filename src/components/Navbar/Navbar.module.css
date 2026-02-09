@@ -1,8 +1,7 @@
 .navbar {
   width: 100%;
-  background-color: var(--white); /* White background */
-  padding: 20px 0;
-  /* Optional: sticky header if you want it */
+  background-color: var(--white);
+  padding: 20px 80px; /* Reduced padding slightly since the text logo is tall */
   position: relative; 
   z-index: 100;
 }
@@ -16,11 +15,31 @@
   align-items: center;
 }
 
-.logoImage {
-  height: 50px; 
-  width: auto;
+/* NEW LOGO STYLES */
+.logoWrapper {
+  display: flex;
+  flex-direction: column; /* Stacks Greenway on top of Backwater */
+  justify-content: center;
+  cursor: pointer;
 }
 
+.logoText {
+  font-size: 32px; /* Adjusted slightly to fit navbar better, typically 40px is very big */
+  font-weight: 800;
+  color: #006D5B;
+  margin: 0;
+  line-height: 1;
+}
+
+.logoSub {
+  font-size: 12px; /* Adjusted to balance with the header */
+  font-weight: 600;
+  color: #006D5B;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* --- Navigation Links --- */
 .links {
   display: flex;
   gap: 40px;
@@ -28,7 +47,7 @@
 }
 
 .links a {
-  color: var(--text-dark); /* Black text */
+  color: var(--text-dark);
   font-weight: 500;
   font-size: 16px;
   transition: color 0.3s;
@@ -49,14 +68,14 @@
 .bar {
   width: 25px;
   height: 3px;
-  background-color: var(--text-dark); /* Dark bars for white bg */
+  background-color: var(--text-dark);
   border-radius: 2px;
 }
 
-/* Mobile styles remain mostly the same, just ensure text is visible */
+/* Mobile Styles */
 @media (max-width: 960px) {
   .desktopAction { display: none; }
-  .hamburger { display: flex; flex-direction: column; gap: 5px; }
+  .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
   
   .links {
     position: absolute;
@@ -64,8 +83,16 @@
     left: 0;
     width: 100%;
     flex-direction: column;
-    background-color: var(--white); /* White mobile menu */
+    background-color: var(--white);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     padding: 30px 0;
+    
+    /* Hide menu by default on mobile */
+    display: none; 
+  }
+  
+  /* Show menu when active class is added */
+  .links.active {
+    display: flex;
   }
 }

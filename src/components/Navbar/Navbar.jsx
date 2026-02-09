@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Navbar.module.css';
 import Button from '../Button/Button';
-import logo from '../../assets/nav-logo.png'; 
+// import logo from '../../assets/nav-logo.png'; // You can remove this import now if unused
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,14 +9,17 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
+        
+        {/* NEW TEXT LOGO STRUCTURE */}
         <div className={styles.logoWrapper}>
-          <img src={logo} alt="Greenway Logo" className={styles.logoImage} />
+            <h3 className={styles.logoText}>GREENWAY</h3>
+            <span className={styles.logoSub}>BACKWATER CRUISES</span>
         </div>
 
         <div className={`${styles.links} ${isOpen ? styles.active : ''}`}>
           <a href="#home">Home</a>
           <a href="#about">About</a>
-          <a href="#packages">Cruise Route</a> {/* Updated text */}
+          <a href="#packages">Cruise Route</a>
           <a href="#packages">Packages</a>
           
           <div className={styles.mobileAction}>

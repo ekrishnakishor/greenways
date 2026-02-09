@@ -20,8 +20,8 @@ const ExperienceSection = () => {
             <h3 className={styles.packageTitle}>Day Cruise Escape</h3>
             
             <div className={styles.priceTag}>
-              <span className={styles.amount}>₹ 14,000</span>
-              <span className={styles.detail}> for up to 6 guests</span>
+              <span className={styles.amount}>Enquire Now</span>
+              <span className={styles.detail}>for package*</span>
             </div>
             
             <p className={styles.description}>

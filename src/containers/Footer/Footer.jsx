@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // 1. Import Link for routing
 import styles from './Footer.module.css';
-import logo from '../../assets/nav-logo.png'; // Re-using your logo
 
 const Footer = () => {
   return (
@@ -25,11 +25,15 @@ const Footer = () => {
         {/* Center Column: Links */}
         <div className={styles.column}>
           <ul className={styles.linksList}>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#houseboat">Our Houseboat</a></li>
-            <li><a href="#package">Day Cruise Package</a></li>
-            <li><a href="#terms">Terms & Conditions</a></li>
-            <li><a href="#privacy">Privacy Policy</a></li>
+            {/* Note: We use /#id so these work even when clicked FROM the privacy page */}
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#houseboat">Our Houseboat</a></li>
+            <li><a href="/#packages">Day Cruise Package</a></li>
+            
+            {/* Internal Pages use Link */}
+            <li><Link to="/terms">Terms & Conditions</Link></li>
+            <li><Link to="/terms">Booking & Refund Policy</Link></li>
+            <li><Link to="/privacy">Privacy Policy</Link></li>
           </ul>
         </div>
 
@@ -43,8 +47,6 @@ const Footer = () => {
           </div>
           
           <div className={styles.logoWrapper}>
-            {/* If you have the text version of the logo, use that. 
-                Otherwise we use the nav logo or text */}
             <h3 className={styles.logoText}>GREENWAY</h3>
             <span className={styles.logoSub}>BACKWATER CRUISES</span>
           </div>

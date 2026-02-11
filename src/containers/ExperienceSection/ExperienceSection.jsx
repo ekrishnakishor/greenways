@@ -1,21 +1,34 @@
 import React from 'react';
 import styles from './ExperienceSection.module.css';
 import Button from '../../components/Button/Button';
-import bgImage from '../../assets/experience-banner.png'; // Make sure this is the boat image
 
 const ExperienceSection = () => {
+  // Your video ID
+  const videoId = "2k06MmlAKfU";
+
   return (
     <section className={styles.section} id="packages">
       <div className={styles.container}>
         
-        {/* The Headline sits outside the card */}
         <h2 className={styles.mainHeadline}>
           A Premium Backwater Experience<br />
           in Just One Perfect Day
         </h2>
 
-        {/* The Large Card */}
-        <div className={styles.card} style={{ backgroundImage: `url(${bgImage})` }}>
+        {/* The Card */}
+        <div className={styles.card}>
+          
+          {/* --- NEW: YouTube Video Background --- */}
+          <div className={styles.videoWrapper}>
+            <iframe 
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&playsinline=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1`} 
+              title="Experience Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              className={styles.iframeVideo}
+            ></iframe>
+          </div>
+
+          {/* Content sits on top */}
           <div className={styles.content}>
             <h3 className={styles.packageTitle}>Day Cruise Escape</h3>
             

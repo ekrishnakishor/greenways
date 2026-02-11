@@ -1,16 +1,16 @@
 .footer {
   background-color: #E0F9F9; /* The Light Mint Background */
-  padding-top: 80px;
+  padding-top: 20px;
   color: var(--text-dark);
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 40px 60px 40px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: baseline;
   flex-wrap: wrap;
   gap: 40px;
 }
@@ -123,7 +123,7 @@
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    padding: 0 20px 40px 20px;
+    padding: 20px;
   }
   
   .headline {

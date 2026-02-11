@@ -20,4 +20,11 @@
   transform: translateY(-1px);
 }
 
+@media (max-width: 750px) {
+  .btn {
+    padding: 10px 20px;
+  }
+  
+}
+
 /* We will add more variants later as we need them */

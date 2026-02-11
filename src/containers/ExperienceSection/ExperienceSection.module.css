@@ -1,5 +1,5 @@
 .section {
-  padding: 50px 80px;
+  padding: 30px;
   background-color: var(--white);
 }
 
@@ -21,41 +21,65 @@
   width: 100%;
   height: 600px;
   border-radius: 32px;
-  background-size: cover;
-  background-position: center;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Important to crop the video */
   
-  /* Flexbox to position the content on the right */
+  /* Flexbox to position the content */
   display: flex;
-  align-items: center;     /* Vertically Center */
-  justify-content: flex-end; /* Push content to the Right */
-  padding-right: 80px;     /* Space from right edge */
+  align-items: center;    
+  justify-content: flex-end; 
+  padding-right: 80px;    
+  background-color: #000; /* Fallback color while video loads */
 }
 
-/* Optional: A subtle gradient overlay if the text is hard to read on the water */
+/* --- NEW: Video Wrapper Styles --- */
+.videoWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Sits at the back */
+  pointer-events: none; /* Prevents clicking/pausing */
+  overflow: hidden;
+}
+
+/* This scales the iframe to simulate "background-size: cover" */
+.iframeVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* We make the video HUGE so the black bars are pushed way outside the box */
+  width: 400%; 
+  height: 400%; 
+  transform: translate(-50%, -50%);
+  border: none;
+  pointer-events: none;
+}
+
+/* Overlay gradient - Important for text readability */
 .card::before {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%; /* Only covers the right side */
+  width: 60%; /* Increased coverage slightly for better read */
   height: 100%;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.4));
-  z-index: 1;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.85));
+  z-index: 1; /* Sits above video, below text */
   pointer-events: none;
 }
 
 .content {
   position: relative;
-  z-index: 2;
-  max-width: 400px; /* Limits width of text block */
+  z-index: 2; /* Sits on top of everything */
+  max-width: 290px;
   text-align: left;
 }
 
 .packageTitle {
   font-size: 32px;
-  color: #00C2A0; /* Teal Color */
+  color: #006D5B; /* Updated to match your brand Teal */
   margin-bottom: 16px;
   font-weight: 700;
 }
@@ -81,8 +105,9 @@
 .description {
   font-size: 16px;
   line-height: 1.6;
-  color: #333; /* Darker grey for readability on background */
+  color: #333;
   margin-bottom: 32px;
+  font-weight: 500;
 }
 
 .actions {
@@ -99,29 +124,41 @@
   .card {
     height: auto;
     min-height: 500px;
-    justify-content: center; /* Center content on mobile */
-    align-items: flex-end;   /* Push content to bottom */
+    justify-content: center;
     padding: 20px;
-    background-position: 20% center; /* Shift image */
   }
 
+  /* Adjust overlay for mobile */
   .card::before {
     width: 100%;
-    height: 60%;
+    height: 70%;
     top: auto;
     bottom: 0;
-    background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+    right: 0;
+    background: linear-gradient(to top, rgba(255,255,255,0.95), transparent);
   }
   
+  /* On mobile, we can scale the video less aggressively if needed, 
+     but keeping it large ensures no black bars. */
+  .iframeVideo {
+    width: 400%; /* Wider on mobile to cover vertical space */
+    height: 100%;
+  }
+
   .content {
     max-width: 100%;
-    background: rgba(255,255,255,0.8); /* Add background card for mobile readability */
+    /* Added a glass effect card for better mobile readability */
+    background: rgba(255, 255, 255, 0.11); 
+    backdrop-filter: blur(5px);
     padding: 24px;
     border-radius: 20px;
-    backdrop-filter: blur(5px);
+    margin-top: 150px; /* Push content down to see some video */
   }
   
   .actions {
-    flex-direction: column; /* Stack buttons on mobile */
+    flex-direction: column;
+  }
+  .section {
+    padding: 20px;
   }
 }

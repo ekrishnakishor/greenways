@@ -1,5 +1,5 @@
 .section {
-  padding: 80px;
+  padding: 30px;
   background-color: var(--white);
 }
 
@@ -22,7 +22,7 @@
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 20px;
-  width: 10%;
+  /* width: 10%; */
   text-align: center;
 }
 
@@ -47,5 +47,11 @@
   
   .headline {
     font-size: 32px;
+  }
+  .section {
+    padding: 20px;
+  }
+  .badge {
+    padding: 10px 20px;
   }
 }

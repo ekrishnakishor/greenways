@@ -1,5 +1,5 @@
 .sectionPadding {
-  padding: 20px 80px; /* Space around the card */
+  padding: 30px; /* Space around the card */
   display: flex;
   justify-content: center;
 }
@@ -60,10 +60,13 @@
   }
   
   .subhead {
-    font-size: 14px;
+    /* font-size: 14px; */
     color: #000; /* Ensure readability */
-    background: rgba(255,255,255,0.7); /* Optional: slight backing if text hits busy image */
     padding: 5px;
     border-radius: 4px;
+    text-wrap-style: balance;
+  }
+  .sectionPadding {
+    padding: 20px;
   }
 }

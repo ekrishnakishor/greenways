@@ -1,5 +1,5 @@
 .section {
-  padding: 80px 80px;
+  padding: 30px;
   background-color: var(--white);
 }
 
@@ -18,7 +18,7 @@
   background-color: #00DCCD; /* Cyan Color */
   color: var(--white);
   padding: 18px 24px;
-  width: 10%;
+  /* width: 10%; */
   text-align: center;
   border-radius: 50px;
   font-weight: 700;
@@ -41,5 +41,11 @@
 @media (max-width: 768px) {
   .headline {
     font-size: 28px;
+  }
+  .section {
+    padding: 20px;
+  }
+  .badge {
+    padding: 10px 20px;
   }
 }

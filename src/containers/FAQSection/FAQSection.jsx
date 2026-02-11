@@ -17,6 +17,14 @@ const FAQSection = () => {
     {
       question: "Do you allow private bookings for couples or small groups?",
       answer: "Yes, our boats are exclusively designed for private bookings. Whether you are a couple on a romantic getaway or a small family, you get the entire boat to yourselves."
+    },
+    {
+      question: "What is your cancellation policy?",
+      answer: "We offer a 100% refund if cancelled 15 days prior. 50% refund for cancellations between 7-14 days. No refunds for cancellations within 7 days of the cruise date."
+    },
+    {
+      question: "How do I secure a booking?",
+      answer: "You can secure your dates by paying a 50% advance via UPI or Bank Transfer. The remaining balance is payable before check-in."
     }
   ];
 

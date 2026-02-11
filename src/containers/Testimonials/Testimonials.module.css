@@ -1,5 +1,5 @@
 .section {
-  padding: 80px;
+  padding: 20px;
   background-color: var(--white);
 }
 
@@ -84,5 +84,8 @@
   
   .headline {
     font-size: 32px;
+  }
+  .section {
+    padding: 20px;
   }
 }

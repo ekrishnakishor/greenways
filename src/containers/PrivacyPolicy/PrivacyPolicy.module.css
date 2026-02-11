@@ -1,0 +1,167 @@
+/* Wrapper to handle background and spacing */
+.pageWrapper {
+  background-color: var(--white); /* Or #F9F9F9 if you want a slight contrast */
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 20px; /* Comfortable top/bottom spacing */
+  font-family: 'Inter', sans-serif; /* Matches Homepage */
+}
+
+/* Header Styling */
+.header {
+  text-align: left;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.mainTitle {
+  font-size: 42px;
+  font-weight: 800;
+  color: #006D5B; /* Your Brand Teal */
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.metaInfo {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+}
+
+/* Content Typography */
+.content {
+  color: var(--text-dark); /* Dark Grey/Black */
+  line-height: 1.7; /* Good line height for readability (SEO factor) */
+  font-size: 16px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.introText {
+  font-size: 18px; /* Slightly larger introduction */
+  color: #333;
+  margin-bottom: 24px;
+}
+
+/* Headings Hierarchy */
+h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 40px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00C2A0; /* Lighter Teal for subheadings */
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #666;
+}
+
+/* Lists */
+.list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.list li {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.highlight {
+  color: #006D5B;
+  font-weight: 600;
+}
+
+.link {
+  color: #00C2A0;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.link:hover {
+  border-bottom-color: #00C2A0;
+}
+
+/* CONTACT CARD - Matches the Feature/About cards style */
+.contactCard {
+  background-color: #E0F7FA; /* Light Mint Background */
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid #d0f0f4;
+}
+
+.contactCard h2 {
+  color: #006D5B;
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.contactList li {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column; /* Stack label and value on mobile */
+  font-size: 16px;
+}
+
+.contactList a {
+  color: var(--text-dark);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contactList a:hover {
+  color: #00C2A0;
+}
+
+.label {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #006D5B;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 32px;
+  }
+  
+  .container {
+    padding: 40px 20px; /* Ensuring 20px side padding on mobile */
+  }
+
+  .contactCard {
+    padding: 24px;
+  }
+}

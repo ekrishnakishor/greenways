@@ -1,0 +1,304 @@
+.pageWrapper {
+  background-color: var(--white);
+  min-height: 100vh;
+}
+
+/* --- HERO --- */
+.hero {
+  height: 60vh; /* Increased slightly to fit the quote comfortably */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 20px;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+/* Restored Tagline */
+.tagline {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.heroTitle {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.heroDesc {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+/* Restored Quote Box */
+.quoteBox {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 24px;
+  border-radius: 12px;
+  font-style: italic;
+  font-size: 18px;
+  border-left: 4px solid #00C2A0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- TIMELINE SECTION --- */
+.timelineSection {
+  position: relative;
+  padding: 80px 0;
+  overflow: visible;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+}
+
+.line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-image: linear-gradient(to bottom, #ddd 50%, transparent 50%);
+  background-size: 2px 16px; 
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* --- MOVING BOAT --- */
+.movingBoatWrapper {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+  width: 60px;
+  height: 60px;
+  transition: top 0.1s linear;
+}
+
+.boatIcon {
+  background: var(--white);
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 2px solid #00C2A0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- STOPS & ANIMATIONS --- */
+.stopsWrapper {
+  position: relative;
+  z-index: 2;
+  /* padding-top: 40px; */
+}
+
+.stopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  position: relative;
+
+  /* Animation Initial State: Hidden & pushed down */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Active State: Visible & moved up */
+.isVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stopRow.left { flex-direction: row; }
+.stopRow.right { flex-direction: row-reverse; }
+
+.stopCard {
+  width: 42%;
+  background: #F9F9F9;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.stopNumber {
+  font-size: 32px;
+  font-weight: 900;
+  color: #eee;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.stopName {
+  font-size: 20px;
+  color: #006D5B;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.stopDesc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.spacer { width: 42%; }
+
+.dot {
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background-color: #ddd;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+  transform: translateX(-50%);
+  transition: background-color 0.4s;
+}
+
+.activeDot {
+  background-color: #00C2A0; /* Green when active */
+  box-shadow: 0 0 0 3px rgba(0, 220, 205, 0.2);
+}
+
+/* --- CTA --- */
+.finalCta {
+  position: relative;
+  height: 400px; /* Nice tall banner height */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  margin-top: 0; /* Connects seamlessly to previous section */
+}
+
+/* Elegant Gradient Overlay */
+.ctaOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Fades from dark teal to transparent black */
+  background: linear-gradient(135deg, rgba(0, 109, 91, 0.85), rgba(0, 0, 0, 0.6));
+  z-index: 1;
+}
+
+.ctaContentWrapper {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+/* "Stylish" Text Styles */
+.ctaSubtitle {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 4px; /* Wide spacing looks premium */
+  margin-bottom: 16px;
+  opacity: 0.9;
+  font-weight: 500;
+  color: #8afff0; /* Slight teal tint to the white text */
+}
+
+.ctaTitle {
+  font-size: 56px; /* Big impact text */
+  font-weight: 800; /* Extra bold */
+  margin: 0 0 40px 0;
+  font-family: 'Inter', sans-serif; /* Or your serif font if you have one */
+  line-height: 1.1;
+}
+
+.ctaAction {
+  display: flex;
+  justify-content: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .finalCta {
+    height: 350px;
+  }
+
+  .ctaTitle {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .ctaSubtitle {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .heroTitle { font-size: 32px; }
+  
+  .line { left: 24px; }
+  
+  .movingBoatWrapper { 
+    left: 24px; 
+    transform: translate(-50%, -50%);
+  }
+  
+  .dot { left: 24px; }
+
+  .stopRow, .stopRow.right {
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 40px;
+  }
+
+  .stopCard {
+    width: 80%;
+    margin-left: auto;
+  }
+  
+  .spacer { display: none; }
+}

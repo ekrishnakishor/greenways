@@ -18,9 +18,9 @@ const Navbar = () => {
 
         <div className={`${styles.links} ${isOpen ? styles.active : ''}`}>
           <a href="/">Home</a>
-          <a href="#about">About</a>
+          <a href="/#about">About</a>
           <a href="/route">Cruise Route</a>
-          <a href="#packages">Packages</a>
+          <a href="/route">Packages</a>
           
           <div className={styles.mobileAction}>
              <Button variant="primary">Contact Us</Button>

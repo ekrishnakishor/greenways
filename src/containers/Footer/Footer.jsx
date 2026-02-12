@@ -28,7 +28,7 @@ const Footer = () => {
             {/* Note: We use /#id so these work even when clicked FROM the privacy page */}
             <li><a href="/#about">About Us</a></li>
             <li><a href="/#houseboat">Our Houseboat</a></li>
-            <li><a href="/#packages">Day Cruise Package</a></li>
+            <li><a href="/route">Day Cruise Package</a></li>
             
             {/* Internal Pages use Link */}
             <li><Link to="/terms">Terms & Conditions</Link></li>

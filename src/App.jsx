@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import React, { useState } from "react"; // 1. FIX: Import useState
+import { Routes, Route } from "react-router-dom";
 import HeroSection from "./components/HeroSection/HeroSection";
 import Navbar from "./components/Navbar/Navbar";
 import ExperienceSection from "./containers/ExperienceSection/ExperienceSection";
@@ -9,15 +10,19 @@ import GallerySection from "./containers/GallerySection/GallerySection";
 import PersonalisedSection from "./containers/PersonalisedSection/PersonalisedSection";
 import Testimonials from "./containers/Testimonials/Testimonials";
 import PrivacyPolicy from "./containers/PrivacyPolicy/PrivacyPolicy";
-import TermsConditions from './containers/TermsConditions/TermsConditions';
-import CruiseRoute from './containers/CruiseRoute/CruiseRoute';
+import TermsConditions from "./containers/TermsConditions/TermsConditions";
+import CruiseRoute from "./containers/CruiseRoute/CruiseRoute";
+import BookingModal from "./components/BookingModal/BookingModal";
+import ExperiencePage from "./containers/ExperiencePage/ExperiencePage";
 
-const LandingPage = () => (
+// 2. FIX: Accept the prop here and pass it down
+const LandingPage = ({ onBookClick }) => (
   <>
-    <HeroSection />
+    {/* Pass onBookClick to sections that have a "Book Now" button */}
+    <HeroSection onBookClick={onBookClick} />
     <FeaturesSection />
     <GallerySection />
-    <ExperienceSection />
+    <ExperienceSection onBookClick={onBookClick} />
     <PersonalisedSection />
     <FAQSection />
     <Testimonials />
@@ -25,21 +30,33 @@ const LandingPage = () => (
 );
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openBooking = () => setIsModalOpen(true);
+
   return (
     <div className="App">
-      <Navbar /> {/* Navbar stays on all pages */}
-      
+      <Navbar onBookClick={openBooking} />
+
       <Routes>
-        {/* The Home Page */}
-        <Route path="/" element={<LandingPage />} />
-        
-        {/* The Privacy Policy Page */}
+        <Route path="/" element={<LandingPage onBookClick={openBooking} />} />
+
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsConditions />} />
-        <Route path="/route" element={<CruiseRoute />} />
+
+        {/* 3. FIX: Pass the prop to CruiseRoute too */}
+        <Route
+          path="/route"
+          element={<CruiseRoute onBookClick={openBooking} />}
+        />
+        <Route path="/experience" element={<ExperiencePage />} />
       </Routes>
 
-      <Footer /> {/* Footer stays on all pages */}
+      <Footer onBookClick={openBooking} />
+
+      <BookingModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 }

@@ -42,30 +42,40 @@
   max-width: 400px;
 }
 
+/* --- UPDATED BUTTON WRAPPER --- */
 .ctaWrapper {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  gap: 16px; /* Adds space between "View Itinerary" and "Book Now" */
+  flex-wrap: wrap; /* Allows buttons to stack if screen is very small */
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .heroCard {
-    height: 400px;
-    padding-left: 30px;
+    height: 480px; /* Increased slightly to fit the 2nd button comfortably */
+    padding-left: 24px; /* Slightly less padding for more room */
     background-position: 70% center; /* Shift image so boat is visible */
+    align-items: center; /* Keep vertically centered */
   }
   
   .headline {
     font-size: 36px;
+    margin-bottom: 16px;
   }
   
   .subhead {
-    /* font-size: 14px; */
     color: #000; /* Ensure readability */
-    padding: 5px;
-    border-radius: 4px;
-    text-wrap-style: balance;
+    padding: 0;
+    margin-bottom: 24px;
+    text-wrap: balance;
   }
+
+  .ctaWrapper {
+    gap: 12px; /* Slightly tighter gap on mobile */
+  }
+
   .sectionPadding {
     padding: 20px;
   }

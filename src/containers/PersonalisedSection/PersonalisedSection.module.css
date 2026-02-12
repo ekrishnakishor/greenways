@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   padding-left: 60px; /* Space from left edge */
-  background-position: 20% center
+  background-position: 20% center;
 }
 
 .formCard {
@@ -78,6 +78,13 @@
   margin-bottom: 4px;
 }
 
+/* --- NEW: Red Asterisk for Required Fields --- */
+.req {
+  color: #d93025;
+  margin-left: 2px;
+  font-size: 14px;
+}
+
 /* Underline Style Inputs */
 .input, .textarea {
   width: 100%;
@@ -97,7 +104,19 @@
 
 .input:focus, .textarea:focus {
   outline: none;
-  border-bottom-color: #00C2A0;
+  border-bottom-color: #00C2A0; /* Green on focus */
+}
+
+/* --- NEW: Error Styling (Red Underline) --- */
+.inputError {
+  border-bottom-color: #d93025 !important;
+}
+
+/* --- NEW: Error Text Message --- */
+.errorText {
+  color: #d93025;
+  font-size: 11px;
+  margin-top: 4px;
 }
 
 .submitWrapper {
@@ -111,6 +130,7 @@
     justify-content: center; /* Center the card on mobile */
     min-height: auto;
     aspect-ratio: auto;
+    background-position: center; /* Reset position for mobile */
   }
   
   .formCard {
@@ -121,6 +141,7 @@
     flex-direction: column;
     gap: 16px;
   }
+  
   .section {
     padding: 20px;
   }

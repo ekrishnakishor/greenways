@@ -3,7 +3,7 @@ import styles from './FAQSection.module.css';
 import AccordionItem from '../../components/AccordionItem/AccordionItem';
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState(0); // First one open by default, or null for none
+  const [openIndex, setOpenIndex] = useState(null); // First one open by default, or null for none
 
   const faqs = [
     {

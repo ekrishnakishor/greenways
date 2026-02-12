@@ -1,0 +1,120 @@
+.pageWrapper {
+  padding-top: 120px; /* Space for fixed navbar */
+  padding-bottom: 60px;
+  background-color: #F8FBFB; /* Very light mint/grey background */
+}
+
+/* --- Header Styles --- */
+.header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
+}
+
+.subhead {
+  color: #00C2A0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.headline {
+  font-size: 48px;
+  color: #1a1a1a;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.description {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- GRID SETUP (The Magic Part) --- */
+.wallSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.gridContainer {
+  display: grid;
+  /* Define a 4-column grid on desktop with a 20px gap */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  /* 'dense' tries to fill empty gaps in the grid automatically */
+  grid-auto-flow: dense; 
+}
+
+/* Base height for standard items */
+.gridContainer > div {
+    height: 300px;
+}
+
+/* --- Size Modifiers (mapped from data) --- */
+
+/* Spans 2 columns horizontally */
+.wide {
+  grid-column: span 2;
+}
+
+/* Spans 2 rows vertically */
+.tall {
+  grid-row: span 2;
+  height: 620px !important; /* height * 2 + gap */
+}
+
+
+/* --- Bottom CTA --- */
+.ctaSection {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 24px;
+    color: #006D5B;
+    font-weight: 700;
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
+  .headline { font-size: 36px; }
+  
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* On tablet, 'wide' items just take full width */
+  .wide { grid-column: span 2; }
+}
+
+/* Mobile: 1 column stack */
+@media (max-width: 600px) {
+    .pageWrapper { padding-top: 100px; }
+    .headline { font-size: 32px; }
+    .description { font-size: 16px; }
+
+    .gridContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    /* Reset grid spans for mobile flex stack */
+    .wide, .tall {
+      grid-column: auto;
+      grid-row: auto;
+      height: 300px !important; /* Standardize height on mobile */
+    }
+    
+    /* Exception for tall items on mobile to remain a bit taller */
+    .tall {
+        height: 450px !important;
+    }
+  }

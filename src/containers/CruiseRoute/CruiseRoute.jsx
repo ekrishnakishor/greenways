@@ -4,11 +4,11 @@ import Button from '../../components/Button/Button';
 import heroBg from '../../assets/section-img-3.png';
 import ctaBg from '../../assets/personalised-banner.png';
 
-const CruiseRoute = () => {
+// 1. Accept the prop here
+const CruiseRoute = ({ onBookClick }) => {
   const sectionRef = useRef(null);
-  const [boatTop, setBoatTop] = useState(0); // Tracks boat position (0% to 100%)
+  const [boatTop, setBoatTop] = useState(0); 
   
-  // Animation State
   const stopRefs = useRef([]);
   const [visibleStops, setVisibleStops] = useState(new Set());
 
@@ -60,7 +60,7 @@ const CruiseRoute = () => {
           }
         });
       },
-      { threshold: 0.4 } // Trigger when 40% of card is visible
+      { threshold: 0.4 } 
     );
 
     stopRefs.current.forEach((el) => {
@@ -73,7 +73,6 @@ const CruiseRoute = () => {
   return (
     <div className={styles.pageWrapper}>
       
-      {/* Hero Section with Tagline & Quote Restored */}
       <section className={styles.hero} style={{ backgroundImage: `url(${heroBg})` }}>
         <div className={styles.heroOverlay}></div>
         <div className={styles.heroContent}>
@@ -137,7 +136,8 @@ const CruiseRoute = () => {
           <p className={styles.ctaSubtitle}>Experience the Rhythm of Kerala</p>
           <h2 className={styles.ctaTitle}>Ready to Sail?</h2>
           <div className={styles.ctaAction}>
-             <Button variant="white">Book Your Date</Button>
+             {/* 2. Attach the function here */}
+             <Button variant="white" onClick={onBookClick}>Book Your Date</Button>
           </div>
         </div>
       </section>

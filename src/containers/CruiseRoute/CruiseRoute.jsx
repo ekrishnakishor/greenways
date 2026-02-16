@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './CruiseRoute.module.css';
 import Button from '../../components/Button/Button';
-import heroBg from '../../assets/section-img-3.png';
-import ctaBg from '../../assets/personalised-banner.png';
+import heroBg from '../../assets/section-img-3.webp';
+import ctaBg from '../../assets/personalised-banner.webp';
 
 // 1. Accept the prop here
 const CruiseRoute = ({ onBookClick }) => {

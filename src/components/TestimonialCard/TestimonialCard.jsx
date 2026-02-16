@@ -7,7 +7,7 @@ const TestimonialCard = ({ image, name, location, review }) => {
     <div className={styles.card}>
       {/* Left Side: Image */}
       <div className={styles.imageWrapper}>
-        <img src={image} alt={name} className={styles.image} />
+        <img src={image} alt={name} className={styles.image} loading='lazy' />
       </div>
 
       {/* Right Side: Content */}

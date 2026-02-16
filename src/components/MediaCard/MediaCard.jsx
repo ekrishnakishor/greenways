@@ -5,16 +5,18 @@ const MediaCard = ({ item, className }) => {
   return (
     <div className={`${styles.card} ${className}`}>
       
-      {/* RENDER YOUTUBE */}
+      {/* RENDER YOUTUBE (Atmospheric Mode) */}
       {item.type === 'youtube' && (
         <div className={styles.videoWrapper}>
           <iframe
-            src={`https://www.youtube.com/embed/${item.src}?controls=1&rel=0&modestbranding=1`}
+            // Updated Params: autoplay, mute, loop, no controls, no keyboard
+            src={`https://www.youtube.com/embed/${item.src}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.src}&playsinline=1&showinfo=0&rel=0&disablekb=1&modestbranding=1`}
             title={item.title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
             className={styles.iframe}
           ></iframe>
+          {/* Transparent layer to prevent clicking/pausing */}
+          <div className={styles.videoOverlay}></div>
         </div>
       )}
 
@@ -22,7 +24,6 @@ const MediaCard = ({ item, className }) => {
       {item.type === 'image' && (
         <div className={styles.imageWrapper}>
            <img src={item.src} alt={item.title} className={styles.image} loading="lazy" />
-           {/* Gradient overlay for text readability */}
            <div className={styles.overlay}>
              <h3 className={styles.title}>{item.title}</h3>
            </div>

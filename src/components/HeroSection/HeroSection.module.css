@@ -27,7 +27,7 @@
 }
 
 .headline {
-  font-size: 48px;
+  font-size: 60px;
   line-height: 1.1;
   font-weight: 700;
   color: #00C2A0; /* The Teal Color from your design */
@@ -35,7 +35,7 @@
 }
 
 .subhead {
-  font-size: 16px;
+  font-size:19px;
   line-height: 1.5;
   color: #1A1A1A; /* Dark text */
   margin-bottom: 32px;
@@ -61,7 +61,7 @@
   }
   
   .headline {
-    font-size: 36px;
+    font-size: 50px;
     margin-bottom: 16px;
   }
   

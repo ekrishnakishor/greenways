@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'; // 1. Import Navigation Hook
 import styles from './HeroSection.module.css';
 import Button from '../../components/Button/Button';
-import heroBg from '../../assets/banner-img.png'; 
+import heroBg from '../../assets/banner-img.webp'; 
 
 const HeroSection = ({ onBookClick }) => { // 2. Accept the booking function
   const navigate = useNavigate(); // 3. Initialize hook

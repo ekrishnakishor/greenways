@@ -3,7 +3,7 @@ import styles from './Testimonials.module.css';
 import TestimonialCard from '../../components/TestimonialCard/TestimonialCard';
 
 // Using the assets you specified
-import reviewImg from '../../assets/review.jpg';
+import reviewImg from '../../assets/section-img-4.webp';
 
 const Testimonials = () => {
   const scrollRef = useRef(null);
